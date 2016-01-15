@@ -1235,13 +1235,15 @@ describe("agenda", function() {
         jobs.now('job', { job: 2 });
         jobs.now('job', { job: 3 });
 
-        jobs.start();
+        setTimeout(function() {
+          jobs.start();
+        }, 100);
       });
 
       setTimeout(function() {
         expect(history.length).to.equal(3);
         done();
-      }, 2000);
+      }, 1000);
     });
   });
 
